@@ -1,0 +1,529 @@
+[2024-12-17 14:54:01,976][1079606] Saving configuration to ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/config.json...
+[2024-12-17 14:54:01,990][1079606] Rollout worker 0 uses device cpu
+[2024-12-17 14:54:01,990][1079606] Rollout worker 1 uses device cpu
+[2024-12-17 14:54:02,022][1079606] Using GPUs [0] for process 0 (actually maps to GPUs [1])
+[2024-12-17 14:54:02,023][1079606] InferenceWorker_p0-w0: min num requests: 1
+[2024-12-17 14:54:02,028][1079606] Starting all processes...
+[2024-12-17 14:54:02,028][1079606] Starting process learner_proc0
+[2024-12-17 14:54:02,341][1079606] Starting all processes...
+[2024-12-17 14:54:02,372][1079606] Starting process inference_proc0-0
+[2024-12-17 14:54:02,379][1079606] Starting process rollout_proc0
+[2024-12-17 14:54:02,379][1079606] Starting process rollout_proc1
+[2024-12-17 14:54:03,741][1080180] Using GPUs [0] for process 0 (actually maps to GPUs [1])
+[2024-12-17 14:54:03,744][1080180] Set environment var CUDA_VISIBLE_DEVICES to '1' (GPU indices [0]) for learning process 0
+[2024-12-17 14:54:03,762][1080180] Num visible devices: 1
+[2024-12-17 14:54:03,842][1080180] WARNING! It is generally recommended to enable Fixed KL loss (https://arxiv.org/pdf/1707.06347.pdf) for continuous action tasks to avoid potential numerical issues. I.e. set --kl_loss_coeff=0.1
+[2024-12-17 14:54:03,844][1080180] Setting fixed seed 1111
+[2024-12-17 14:54:03,845][1080180] Using GPUs [0] for process 0 (actually maps to GPUs [1])
+[2024-12-17 14:54:03,844][1080189] Using GPUs [0] for process 0 (actually maps to GPUs [1])
+[2024-12-17 14:54:03,846][1080180] Initializing actor-critic model on device cuda:0
+[2024-12-17 14:54:03,846][1080189] Set environment var CUDA_VISIBLE_DEVICES to '1' (GPU indices [0]) for inference process 0
+[2024-12-17 14:54:03,852][1080180] Created Actor Critic model with architecture:
+[2024-12-17 14:54:03,852][1080180] ActorCriticSeparateWeights(
+  (obs_normalizer): ObservationNormalizer()
+  (actor_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (actor_core): ModelCoreIdentity()
+  (critic_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (critic_core): ModelCoreIdentity()
+  (actor_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_linear): Linear(in_features=512, out_features=1, bias=True)
+  (action_parameterization): ActionParameterizationContinuousNonAdaptiveStddev(
+    (distribution_linear): Linear(in_features=512, out_features=4, bias=True)
+  )
+)
+[2024-12-17 14:54:03,870][1080190] Worker 1 uses CPU cores [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+[2024-12-17 14:54:03,893][1080189] Num visible devices: 1
+[2024-12-17 14:54:03,908][1080191] Worker 0 uses CPU cores [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2024-12-17 14:54:04,003][1080180] Using optimizer <class 'torch.optim.adam.Adam'>
+[2024-12-17 14:54:04,553][1080180] No checkpoints found
+[2024-12-17 14:54:04,554][1080180] Did not load from checkpoint, starting from scratch!
+[2024-12-17 14:54:04,554][1080180] Initialized policy 0 weights for model version 0
+[2024-12-17 14:54:04,555][1080180] LearnerWorker_p0 finished initialization!
+[2024-12-17 14:54:04,556][1080180] Using GPUs [0] for process 0 (actually maps to GPUs [1])
+[2024-12-17 14:54:04,654][1079606] Inference worker 0-0 is ready!
+[2024-12-17 14:54:04,654][1079606] All inference workers are ready! Signal rollout workers to start!
+[2024-12-17 14:54:07,639][1080190] Decorrelating experience for 0 frames...
+[2024-12-17 14:54:07,640][1080190] Decorrelating experience for 128 frames...
+[2024-12-17 14:54:07,767][1080191] Decorrelating experience for 0 frames...
+[2024-12-17 14:54:07,768][1080191] Decorrelating experience for 128 frames...
+[2024-12-17 14:54:09,516][1079606] Fps is (10 sec: nan, 60 sec: nan, 300 sec: nan). Total num frames: 0. Throughput: 0: nan. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-17 14:54:13,824][1080190] Decorrelating experience for 256 frames...
+[2024-12-17 14:54:13,885][1080190] Decorrelating experience for 384 frames...
+[2024-12-17 14:54:13,933][1080191] Decorrelating experience for 256 frames...
+[2024-12-17 14:54:13,979][1080190] Decorrelating experience for 512 frames...
+[2024-12-17 14:54:13,995][1080191] Decorrelating experience for 384 frames...
+[2024-12-17 14:54:14,091][1080191] Decorrelating experience for 512 frames...
+[2024-12-17 14:54:14,096][1080190] Decorrelating experience for 640 frames...
+[2024-12-17 14:54:14,213][1080191] Decorrelating experience for 640 frames...
+[2024-12-17 14:54:14,244][1080190] Decorrelating experience for 768 frames...
+[2024-12-17 14:54:14,364][1080191] Decorrelating experience for 768 frames...
+[2024-12-17 14:54:14,422][1080190] Decorrelating experience for 896 frames...
+[2024-12-17 14:54:14,516][1079606] Fps is (10 sec: 0.0, 60 sec: 0.0, 300 sec: 0.0). Total num frames: 0. Throughput: 0: 0.0. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-17 14:54:14,544][1080191] Decorrelating experience for 896 frames...
+[2024-12-17 14:54:15,404][1080180] Signal inference workers to stop experience collection...
+[2024-12-17 14:54:15,406][1080189] InferenceWorker_p0-w0: stopping experience collection
+[2024-12-17 14:54:15,803][1080180] Signal inference workers to resume experience collection...
+[2024-12-17 14:54:15,804][1080189] InferenceWorker_p0-w0: resuming experience collection
+[2024-12-17 14:54:17,071][1080189] Updated weights for policy 0, policy_version 10 (0.0002)
+[2024-12-17 14:54:18,707][1080189] Updated weights for policy 0, policy_version 20 (0.0002)
+[2024-12-17 14:54:19,515][1079606] Fps is (10 sec: 2457.6, 60 sec: 2457.6, 300 sec: 2457.6). Total num frames: 24576. Throughput: 0: 773.6. Samples: 7736. Policy #0 lag: (min: 0.0, avg: 0.2, max: 2.0)
+[2024-12-17 14:54:19,516][1079606] Avg episode reward: [(0, '-41.809')]
+[2024-12-17 14:54:20,339][1080189] Updated weights for policy 0, policy_version 30 (0.0003)
+[2024-12-17 14:54:21,988][1080189] Updated weights for policy 0, policy_version 40 (0.0003)
+[2024-12-17 14:54:22,017][1079606] Heartbeat connected on Batcher_0
+[2024-12-17 14:54:22,019][1079606] Heartbeat connected on LearnerWorker_p0
+[2024-12-17 14:54:22,024][1079606] Heartbeat connected on InferenceWorker_p0-w0
+[2024-12-17 14:54:22,028][1079606] Heartbeat connected on RolloutWorker_w0
+[2024-12-17 14:54:22,031][1079606] Heartbeat connected on RolloutWorker_w1
+[2024-12-17 14:54:23,614][1080189] Updated weights for policy 0, policy_version 50 (0.0003)
+[2024-12-17 14:54:24,515][1079606] Fps is (10 sec: 5632.0, 60 sec: 3754.7, 300 sec: 3754.7). Total num frames: 56320. Throughput: 0: 3038.1. Samples: 45572. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-17 14:54:24,516][1079606] Avg episode reward: [(0, '-45.759')]
+[2024-12-17 14:54:25,231][1080189] Updated weights for policy 0, policy_version 60 (0.0003)
+[2024-12-17 14:54:26,857][1080189] Updated weights for policy 0, policy_version 70 (0.0003)
+[2024-12-17 14:54:28,570][1080189] Updated weights for policy 0, policy_version 80 (0.0003)
+[2024-12-17 14:54:29,516][1079606] Fps is (10 sec: 6246.4, 60 sec: 4352.0, 300 sec: 4352.0). Total num frames: 87040. Throughput: 0: 4156.8. Samples: 83136. Policy #0 lag: (min: 0.0, avg: 0.5, max: 2.0)
+[2024-12-17 14:54:29,516][1079606] Avg episode reward: [(0, '-44.700')]
+[2024-12-17 14:54:30,189][1080189] Updated weights for policy 0, policy_version 90 (0.0003)
+[2024-12-17 14:54:31,806][1080189] Updated weights for policy 0, policy_version 100 (0.0003)
+[2024-12-17 14:54:33,421][1080189] Updated weights for policy 0, policy_version 110 (0.0003)
+[2024-12-17 14:54:34,515][1079606] Fps is (10 sec: 6348.8, 60 sec: 4792.3, 300 sec: 4792.3). Total num frames: 119808. Throughput: 0: 4091.2. Samples: 102280. Policy #0 lag: (min: 0.0, avg: 0.4, max: 2.0)
+[2024-12-17 14:54:34,516][1079606] Avg episode reward: [(0, '-42.680')]
+[2024-12-17 14:54:34,516][1080180] Saving new best policy, reward=-42.680!
+[2024-12-17 14:54:35,046][1080189] Updated weights for policy 0, policy_version 120 (0.0003)
+[2024-12-17 14:54:36,653][1080189] Updated weights for policy 0, policy_version 130 (0.0002)
+[2024-12-17 14:54:38,274][1080189] Updated weights for policy 0, policy_version 140 (0.0002)
+[2024-12-17 14:54:39,515][1079606] Fps is (10 sec: 6348.8, 60 sec: 5017.6, 300 sec: 5017.6). Total num frames: 150528. Throughput: 0: 4674.8. Samples: 140244. Policy #0 lag: (min: 0.0, avg: 0.4, max: 2.0)
+[2024-12-17 14:54:39,516][1079606] Avg episode reward: [(0, '-40.527')]
+[2024-12-17 14:54:39,517][1080180] Saving new best policy, reward=-40.527!
+[2024-12-17 14:54:39,898][1080189] Updated weights for policy 0, policy_version 150 (0.0002)
+[2024-12-17 14:54:41,516][1080189] Updated weights for policy 0, policy_version 160 (0.0002)
+[2024-12-17 14:54:43,102][1080189] Updated weights for policy 0, policy_version 170 (0.0002)
+[2024-12-17 14:54:44,515][1079606] Fps is (10 sec: 6348.8, 60 sec: 5237.0, 300 sec: 5237.0). Total num frames: 183296. Throughput: 0: 5104.6. Samples: 178660. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2024-12-17 14:54:44,516][1079606] Avg episode reward: [(0, '-37.558')]
+[2024-12-17 14:54:44,516][1080180] Saving new best policy, reward=-37.558!
+[2024-12-17 14:54:44,691][1080189] Updated weights for policy 0, policy_version 180 (0.0003)
+[2024-12-17 14:54:46,279][1080189] Updated weights for policy 0, policy_version 190 (0.0003)
+[2024-12-17 14:54:47,921][1080189] Updated weights for policy 0, policy_version 200 (0.0003)
+[2024-12-17 14:54:49,515][1079606] Fps is (10 sec: 6348.8, 60 sec: 5350.4, 300 sec: 5350.4). Total num frames: 214016. Throughput: 0: 4947.1. Samples: 197884. Policy #0 lag: (min: 0.0, avg: 0.2, max: 2.0)
+[2024-12-17 14:54:49,516][1079606] Avg episode reward: [(0, '-33.165')]
+[2024-12-17 14:54:49,522][1080189] Updated weights for policy 0, policy_version 210 (0.0002)
+[2024-12-17 14:54:49,526][1080180] Saving new best policy, reward=-33.165!
+[2024-12-17 14:54:51,099][1080189] Updated weights for policy 0, policy_version 220 (0.0003)
+[2024-12-17 14:54:52,028][1079606] Keyboard interrupt detected in the event loop EvtLoop [Runner_EvtLoop, process=main process 1079606], exiting...
+[2024-12-17 14:54:52,029][1079606] Runner profile tree view:
+main_loop: 50.0007
+[2024-12-17 14:54:52,029][1079606] Collected {0: 230400}, FPS: 4607.9
+[2024-12-17 14:54:52,029][1080180] Stopping Batcher_0...
+[2024-12-17 14:54:52,029][1080191] Stopping RolloutWorker_w0...
+[2024-12-17 14:54:52,030][1080180] Loop batcher_evt_loop terminating...
+[2024-12-17 14:54:52,030][1080191] Loop rollout_proc0_evt_loop terminating...
+[2024-12-17 14:54:52,031][1080180] Saving ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/checkpoint_p0/checkpoint_000000225_230400.pth...
+[2024-12-17 14:54:52,031][1080190] Stopping RolloutWorker_w1...
+[2024-12-17 14:54:52,032][1080190] Loop rollout_proc1_evt_loop terminating...
+[2024-12-17 14:54:52,051][1080180] Stopping LearnerWorker_p0...
+[2024-12-17 14:54:52,051][1080180] Loop learner_proc0_evt_loop terminating...
+[2024-12-17 14:54:52,063][1080189] Weights refcount: 2 0
+[2024-12-17 14:54:52,064][1080189] Stopping InferenceWorker_p0-w0...
+[2024-12-17 14:54:52,064][1080189] Loop inference_proc0-0_evt_loop terminating...
+[2024-12-19 16:49:39,375][1233311] Saving configuration to ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/config.json...
+[2024-12-19 16:49:39,383][1233311] Rollout worker 0 uses device cpu
+[2024-12-19 16:49:39,383][1233311] Rollout worker 1 uses device cpu
+[2024-12-19 16:49:39,394][1233311] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 16:49:39,395][1233311] InferenceWorker_p0-w0: min num requests: 1
+[2024-12-19 16:49:39,399][1233311] Starting all processes...
+[2024-12-19 16:49:39,399][1233311] Starting process learner_proc0
+[2024-12-19 16:49:39,517][1233311] Starting all processes...
+[2024-12-19 16:49:39,520][1233311] Starting process inference_proc0-0
+[2024-12-19 16:49:39,521][1233311] Starting process rollout_proc0
+[2024-12-19 16:49:39,521][1233311] Starting process rollout_proc1
+[2024-12-19 16:49:40,738][1233484] Worker 1 uses CPU cores [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+[2024-12-19 16:49:40,749][1233482] Worker 0 uses CPU cores [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2024-12-19 16:49:40,766][1233483] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 16:49:40,767][1233483] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for inference process 0
+[2024-12-19 16:49:40,807][1233483] Num visible devices: 1
+[2024-12-19 16:49:40,816][1233475] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 16:49:40,817][1233475] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for learning process 0
+[2024-12-19 16:49:40,833][1233475] Num visible devices: 1
+[2024-12-19 16:49:40,876][1233475] WARNING! It is generally recommended to enable Fixed KL loss (https://arxiv.org/pdf/1707.06347.pdf) for continuous action tasks to avoid potential numerical issues. I.e. set --kl_loss_coeff=0.1
+[2024-12-19 16:49:40,876][1233475] Setting fixed seed 1111
+[2024-12-19 16:49:40,877][1233475] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 16:49:40,877][1233475] Initializing actor-critic model on device cuda:0
+[2024-12-19 16:49:40,881][1233475] Created Actor Critic model with architecture:
+[2024-12-19 16:49:40,881][1233475] ActorCriticSeparateWeights(
+  (obs_normalizer): ObservationNormalizer()
+  (actor_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (actor_core): ModelCoreIdentity()
+  (critic_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (critic_core): ModelCoreIdentity()
+  (actor_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_linear): Linear(in_features=512, out_features=1, bias=True)
+  (action_parameterization): ActionParameterizationContinuousNonAdaptiveStddev(
+    (distribution_linear): Linear(in_features=512, out_features=4, bias=True)
+  )
+)
+[2024-12-19 16:49:40,962][1233475] Using optimizer <class 'torch.optim.adam.Adam'>
+[2024-12-19 16:49:41,239][1233475] Loading state from checkpoint ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/checkpoint_p0/checkpoint_000000225_230400.pth...
+[2024-12-19 16:49:41,244][1233475] Loading model from checkpoint
+[2024-12-19 16:49:41,244][1233475] Loaded experiment state at self.train_step=225, self.env_steps=230400
+[2024-12-19 16:49:41,245][1233475] Initialized policy 0 weights for model version 225
+[2024-12-19 16:49:41,246][1233475] LearnerWorker_p0 finished initialization!
+[2024-12-19 16:49:41,246][1233475] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 16:49:41,314][1233311] Inference worker 0-0 is ready!
+[2024-12-19 16:49:41,314][1233311] All inference workers are ready! Signal rollout workers to start!
+[2024-12-19 16:49:42,501][1233311] Fps is (10 sec: nan, 60 sec: nan, 300 sec: nan). Total num frames: 230400. Throughput: 0: nan. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-19 16:49:43,282][1233484] Decorrelating experience for 0 frames...
+[2024-12-19 16:49:43,282][1233482] Decorrelating experience for 0 frames...
+[2024-12-19 16:49:43,283][1233482] Decorrelating experience for 128 frames...
+[2024-12-19 16:49:43,283][1233484] Decorrelating experience for 128 frames...
+[2024-12-19 16:49:47,501][1233311] Fps is (10 sec: 0.0, 60 sec: 0.0, 300 sec: 0.0). Total num frames: 230400. Throughput: 0: 0.0. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-19 16:49:49,171][1233484] Decorrelating experience for 256 frames...
+[2024-12-19 16:49:49,171][1233482] Decorrelating experience for 256 frames...
+[2024-12-19 16:49:49,229][1233484] Decorrelating experience for 384 frames...
+[2024-12-19 16:49:49,229][1233482] Decorrelating experience for 384 frames...
+[2024-12-19 16:49:49,319][1233484] Decorrelating experience for 512 frames...
+[2024-12-19 16:49:49,320][1233482] Decorrelating experience for 512 frames...
+[2024-12-19 16:49:49,432][1233484] Decorrelating experience for 640 frames...
+[2024-12-19 16:49:49,433][1233482] Decorrelating experience for 640 frames...
+[2024-12-19 16:49:49,572][1233484] Decorrelating experience for 768 frames...
+[2024-12-19 16:49:49,575][1233482] Decorrelating experience for 768 frames...
+[2024-12-19 16:49:49,739][1233484] Decorrelating experience for 896 frames...
+[2024-12-19 16:49:49,742][1233482] Decorrelating experience for 896 frames...
+[2024-12-19 16:49:50,641][1233475] Signal inference workers to stop experience collection...
+[2024-12-19 16:49:50,643][1233483] InferenceWorker_p0-w0: stopping experience collection
+[2024-12-19 16:49:51,026][1233475] Signal inference workers to resume experience collection...
+[2024-12-19 16:49:51,026][1233483] InferenceWorker_p0-w0: resuming experience collection
+[2024-12-19 16:49:52,195][1233483] Updated weights for policy 0, policy_version 235 (0.0003)
+[2024-12-19 16:49:52,501][1233311] Fps is (10 sec: 1228.8, 60 sec: 1228.8, 300 sec: 1228.8). Total num frames: 242688. Throughput: 0: 43.6. Samples: 436. Policy #0 lag: (min: 0.0, avg: 0.0, max: 0.0)
+[2024-12-19 16:49:52,501][1233311] Avg episode reward: [(0, '-16.044')]
+[2024-12-19 16:49:52,501][1233475] Saving new best policy, reward=-16.044!
+[2024-12-19 16:49:53,677][1233483] Updated weights for policy 0, policy_version 245 (0.0002)
+[2024-12-19 16:49:55,153][1233483] Updated weights for policy 0, policy_version 255 (0.0002)
+[2024-12-19 16:49:56,633][1233483] Updated weights for policy 0, policy_version 265 (0.0002)
+[2024-12-19 16:49:57,501][1233311] Fps is (10 sec: 4608.0, 60 sec: 3072.0, 300 sec: 3072.0). Total num frames: 276480. Throughput: 0: 2593.6. Samples: 38904. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2024-12-19 16:49:57,501][1233311] Avg episode reward: [(0, '-30.527')]
+[2024-12-19 16:49:58,106][1233483] Updated weights for policy 0, policy_version 275 (0.0002)
+[2024-12-19 16:49:59,390][1233311] Heartbeat connected on Batcher_0
+[2024-12-19 16:49:59,392][1233311] Heartbeat connected on LearnerWorker_p0
+[2024-12-19 16:49:59,395][1233311] Heartbeat connected on InferenceWorker_p0-w0
+[2024-12-19 16:49:59,398][1233311] Heartbeat connected on RolloutWorker_w0
+[2024-12-19 16:49:59,400][1233311] Heartbeat connected on RolloutWorker_w1
+[2024-12-19 16:49:59,578][1233483] Updated weights for policy 0, policy_version 285 (0.0002)
+[2024-12-19 16:50:01,050][1233483] Updated weights for policy 0, policy_version 295 (0.0002)
+[2024-12-19 16:50:02,501][1233311] Fps is (10 sec: 6758.3, 60 sec: 3993.6, 300 sec: 3993.6). Total num frames: 310272. Throughput: 0: 4011.4. Samples: 80228. Policy #0 lag: (min: 0.0, avg: 0.2, max: 2.0)
+[2024-12-19 16:50:02,501][1233311] Avg episode reward: [(0, '-32.281')]
+[2024-12-19 16:50:02,603][1233483] Updated weights for policy 0, policy_version 305 (0.0002)
+[2024-12-19 16:50:04,067][1233483] Updated weights for policy 0, policy_version 315 (0.0002)
+[2024-12-19 16:50:05,537][1233483] Updated weights for policy 0, policy_version 325 (0.0002)
+[2024-12-19 16:50:07,027][1233483] Updated weights for policy 0, policy_version 335 (0.0002)
+[2024-12-19 16:50:07,501][1233311] Fps is (10 sec: 6860.8, 60 sec: 4587.5, 300 sec: 4587.5). Total num frames: 345088. Throughput: 0: 4046.6. Samples: 101164. Policy #0 lag: (min: 0.0, avg: 0.3, max: 2.0)
+[2024-12-19 16:50:07,501][1233311] Avg episode reward: [(0, '-33.340')]
+[2024-12-19 16:50:08,611][1233483] Updated weights for policy 0, policy_version 345 (0.0002)
+[2024-12-19 16:50:10,246][1233483] Updated weights for policy 0, policy_version 355 (0.0002)
+[2024-12-19 16:50:11,884][1233483] Updated weights for policy 0, policy_version 365 (0.0002)
+[2024-12-19 16:50:12,501][1233311] Fps is (10 sec: 6656.1, 60 sec: 4881.1, 300 sec: 4881.1). Total num frames: 376832. Throughput: 0: 4671.3. Samples: 140140. Policy #0 lag: (min: 0.0, avg: 0.8, max: 2.0)
+[2024-12-19 16:50:12,501][1233311] Avg episode reward: [(0, '-34.473')]
+[2024-12-19 16:50:13,513][1233483] Updated weights for policy 0, policy_version 375 (0.0002)
+[2024-12-19 16:50:15,155][1233483] Updated weights for policy 0, policy_version 385 (0.0002)
+[2024-12-19 16:50:16,782][1233483] Updated weights for policy 0, policy_version 395 (0.0002)
+[2024-12-19 16:50:17,501][1233311] Fps is (10 sec: 6348.8, 60 sec: 5090.7, 300 sec: 5090.7). Total num frames: 408576. Throughput: 0: 5079.0. Samples: 177764. Policy #0 lag: (min: 0.0, avg: 0.8, max: 2.0)
+[2024-12-19 16:50:17,501][1233311] Avg episode reward: [(0, '-36.559')]
+[2024-12-19 16:50:18,432][1233483] Updated weights for policy 0, policy_version 405 (0.0002)
+[2024-12-19 16:50:20,121][1233483] Updated weights for policy 0, policy_version 415 (0.0002)
+[2024-12-19 16:50:21,759][1233483] Updated weights for policy 0, policy_version 425 (0.0002)
+[2024-12-19 16:50:22,501][1233311] Fps is (10 sec: 6246.3, 60 sec: 5222.4, 300 sec: 5222.4). Total num frames: 439296. Throughput: 0: 4904.5. Samples: 196180. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 16:50:22,501][1233311] Avg episode reward: [(0, '-36.160')]
+[2024-12-19 16:50:23,411][1233483] Updated weights for policy 0, policy_version 435 (0.0002)
+[2024-12-19 16:50:25,030][1233483] Updated weights for policy 0, policy_version 445 (0.0002)
+[2024-12-19 16:50:26,684][1233483] Updated weights for policy 0, policy_version 455 (0.0003)
+[2024-12-19 16:50:27,501][1233311] Fps is (10 sec: 6144.0, 60 sec: 5324.8, 300 sec: 5324.8). Total num frames: 470016. Throughput: 0: 5193.3. Samples: 233700. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 16:50:27,501][1233311] Avg episode reward: [(0, '-35.632')]
+[2024-12-19 16:50:28,312][1233483] Updated weights for policy 0, policy_version 465 (0.0003)
+[2024-12-19 16:50:29,962][1233483] Updated weights for policy 0, policy_version 475 (0.0002)
+[2024-12-19 16:50:31,595][1233483] Updated weights for policy 0, policy_version 485 (0.0002)
+[2024-12-19 16:50:32,501][1233311] Fps is (10 sec: 6246.5, 60 sec: 5427.2, 300 sec: 5427.2). Total num frames: 501760. Throughput: 0: 6029.0. Samples: 271304. Policy #0 lag: (min: 0.0, avg: 0.6, max: 2.0)
+[2024-12-19 16:50:32,501][1233311] Avg episode reward: [(0, '-35.476')]
+[2024-12-19 16:50:33,239][1233483] Updated weights for policy 0, policy_version 495 (0.0003)
+[2024-12-19 16:50:34,876][1233483] Updated weights for policy 0, policy_version 505 (0.0002)
+[2024-12-19 16:50:36,729][1233483] Updated weights for policy 0, policy_version 515 (0.0003)
+[2024-12-19 16:50:37,501][1233311] Fps is (10 sec: 6143.9, 60 sec: 5473.7, 300 sec: 5473.7). Total num frames: 531456. Throughput: 0: 6435.1. Samples: 290016. Policy #0 lag: (min: 0.0, avg: 0.6, max: 2.0)
+[2024-12-19 16:50:37,501][1233311] Avg episode reward: [(0, '-34.768')]
+[2024-12-19 16:50:38,526][1233483] Updated weights for policy 0, policy_version 525 (0.0003)
+[2024-12-19 16:50:40,629][1233483] Updated weights for policy 0, policy_version 535 (0.0003)
+[2024-12-19 16:50:42,415][1233483] Updated weights for policy 0, policy_version 545 (0.0002)
+[2024-12-19 16:50:42,501][1233311] Fps is (10 sec: 5632.0, 60 sec: 5461.3, 300 sec: 5461.3). Total num frames: 558080. Throughput: 0: 6288.1. Samples: 321868. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 16:50:42,501][1233311] Avg episode reward: [(0, '-35.596')]
+[2024-12-19 16:50:44,154][1233483] Updated weights for policy 0, policy_version 555 (0.0002)
+[2024-12-19 16:50:45,902][1233483] Updated weights for policy 0, policy_version 565 (0.0003)
+[2024-12-19 16:50:47,501][1233311] Fps is (10 sec: 5632.0, 60 sec: 5956.3, 300 sec: 5498.1). Total num frames: 587776. Throughput: 0: 6148.7. Samples: 356920. Policy #0 lag: (min: 0.0, avg: 0.6, max: 2.0)
+[2024-12-19 16:50:47,501][1233311] Avg episode reward: [(0, '-36.088')]
+[2024-12-19 16:50:47,658][1233483] Updated weights for policy 0, policy_version 575 (0.0003)
+[2024-12-19 16:50:49,392][1233483] Updated weights for policy 0, policy_version 585 (0.0003)
+[2024-12-19 22:12:14,343][1370265] Saving configuration to ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/config.json...
+[2024-12-19 22:12:14,351][1370265] Rollout worker 0 uses device cpu
+[2024-12-19 22:12:14,351][1370265] Rollout worker 1 uses device cpu
+[2024-12-19 22:12:14,361][1370265] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 22:12:14,362][1370265] InferenceWorker_p0-w0: min num requests: 1
+[2024-12-19 22:12:14,365][1370265] Starting all processes...
+[2024-12-19 22:12:14,366][1370265] Starting process learner_proc0
+[2024-12-19 22:12:14,628][1370265] Starting all processes...
+[2024-12-19 22:12:14,631][1370265] Starting process inference_proc0-0
+[2024-12-19 22:12:14,632][1370265] Starting process rollout_proc0
+[2024-12-19 22:12:14,633][1370265] Starting process rollout_proc1
+[2024-12-19 22:12:15,854][1370369] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 22:12:15,856][1370369] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for learning process 0
+[2024-12-19 22:12:15,887][1370377] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 22:12:15,889][1370377] Set environment var CUDA_VISIBLE_DEVICES to '0' (GPU indices [0]) for inference process 0
+[2024-12-19 22:12:15,896][1370369] Num visible devices: 1
+[2024-12-19 22:12:15,933][1370378] Worker 1 uses CPU cores [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+[2024-12-19 22:12:15,939][1370377] Num visible devices: 1
+[2024-12-19 22:12:15,948][1370369] WARNING! It is generally recommended to enable Fixed KL loss (https://arxiv.org/pdf/1707.06347.pdf) for continuous action tasks to avoid potential numerical issues. I.e. set --kl_loss_coeff=0.1
+[2024-12-19 22:12:15,949][1370369] Setting fixed seed 1111
+[2024-12-19 22:12:15,950][1370369] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 22:12:15,950][1370369] Initializing actor-critic model on device cuda:0
+[2024-12-19 22:12:15,956][1370369] Created Actor Critic model with architecture:
+[2024-12-19 22:12:15,956][1370369] ActorCriticSeparateWeights(
+  (obs_normalizer): ObservationNormalizer()
+  (actor_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (actor_core): ModelCoreIdentity()
+  (critic_encoder): QuadMultiEncoder(
+    (self_encoder): Sequential(
+      (0): Linear(in_features=18, out_features=256, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=256, out_features=256, bias=True)
+      (3): Tanh()
+    )
+    (feed_forward): Sequential(
+      (0): Linear(in_features=256, out_features=512, bias=True)
+      (1): Tanh()
+    )
+  )
+  (critic_core): ModelCoreIdentity()
+  (actor_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_decoder): MlpDecoder(
+    (mlp): Identity()
+  )
+  (critic_linear): Linear(in_features=512, out_features=1, bias=True)
+  (action_parameterization): ActionParameterizationContinuousNonAdaptiveStddev(
+    (distribution_linear): Linear(in_features=512, out_features=4, bias=True)
+  )
+)
+[2024-12-19 22:12:15,968][1370376] Worker 0 uses CPU cores [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2024-12-19 22:12:16,065][1370369] Using optimizer <class 'torch.optim.adam.Adam'>
+[2024-12-19 22:12:16,352][1370369] Loading state from checkpoint ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/checkpoint_p0/checkpoint_000000225_230400.pth...
+[2024-12-19 22:12:16,372][1370369] Loading model from checkpoint
+[2024-12-19 22:12:16,373][1370369] Loaded experiment state at self.train_step=225, self.env_steps=230400
+[2024-12-19 22:12:16,373][1370369] Initialized policy 0 weights for model version 225
+[2024-12-19 22:12:16,374][1370369] LearnerWorker_p0 finished initialization!
+[2024-12-19 22:12:16,374][1370369] Using GPUs [0] for process 0 (actually maps to GPUs [0])
+[2024-12-19 22:12:16,431][1370265] Inference worker 0-0 is ready!
+[2024-12-19 22:12:16,431][1370265] All inference workers are ready! Signal rollout workers to start!
+[2024-12-19 22:12:17,344][1370265] Fps is (10 sec: nan, 60 sec: nan, 300 sec: nan). Total num frames: 230400. Throughput: 0: nan. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-19 22:12:18,466][1370378] Decorrelating experience for 0 frames...
+[2024-12-19 22:12:18,466][1370376] Decorrelating experience for 0 frames...
+[2024-12-19 22:12:18,466][1370378] Decorrelating experience for 128 frames...
+[2024-12-19 22:12:18,466][1370376] Decorrelating experience for 128 frames...
+[2024-12-19 22:12:22,344][1370265] Fps is (10 sec: 0.0, 60 sec: 0.0, 300 sec: 0.0). Total num frames: 230400. Throughput: 0: 0.0. Samples: 0. Policy #0 lag: (min: -1.0, avg: -1.0, max: -1.0)
+[2024-12-19 22:12:24,496][1370376] Decorrelating experience for 256 frames...
+[2024-12-19 22:12:24,496][1370378] Decorrelating experience for 256 frames...
+[2024-12-19 22:12:24,554][1370376] Decorrelating experience for 384 frames...
+[2024-12-19 22:12:24,555][1370378] Decorrelating experience for 384 frames...
+[2024-12-19 22:12:24,646][1370376] Decorrelating experience for 512 frames...
+[2024-12-19 22:12:24,648][1370378] Decorrelating experience for 512 frames...
+[2024-12-19 22:12:24,760][1370376] Decorrelating experience for 640 frames...
+[2024-12-19 22:12:24,765][1370378] Decorrelating experience for 640 frames...
+[2024-12-19 22:12:24,901][1370376] Decorrelating experience for 768 frames...
+[2024-12-19 22:12:24,909][1370378] Decorrelating experience for 768 frames...
+[2024-12-19 22:12:25,067][1370376] Decorrelating experience for 896 frames...
+[2024-12-19 22:12:25,079][1370378] Decorrelating experience for 896 frames...
+[2024-12-19 22:12:25,985][1370369] Signal inference workers to stop experience collection...
+[2024-12-19 22:12:25,986][1370377] InferenceWorker_p0-w0: stopping experience collection
+[2024-12-19 22:12:26,373][1370369] Signal inference workers to resume experience collection...
+[2024-12-19 22:12:26,373][1370377] InferenceWorker_p0-w0: resuming experience collection
+[2024-12-19 22:12:27,345][1370265] Fps is (10 sec: 819.2, 60 sec: 819.2, 300 sec: 819.2). Total num frames: 238592. Throughput: 0: 5.6. Samples: 56. Policy #0 lag: (min: 0.0, avg: 0.0, max: 0.0)
+[2024-12-19 22:12:27,573][1370377] Updated weights for policy 0, policy_version 235 (0.0003)
+[2024-12-19 22:12:29,069][1370377] Updated weights for policy 0, policy_version 245 (0.0003)
+[2024-12-19 22:12:30,550][1370377] Updated weights for policy 0, policy_version 255 (0.0003)
+[2024-12-19 22:12:32,040][1370377] Updated weights for policy 0, policy_version 265 (0.0003)
+[2024-12-19 22:12:32,345][1370265] Fps is (10 sec: 4300.7, 60 sec: 2867.2, 300 sec: 2867.2). Total num frames: 273408. Throughput: 0: 2461.9. Samples: 36928. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2024-12-19 22:12:32,345][1370265] Avg episode reward: [(0, '-27.544')]
+[2024-12-19 22:12:32,346][1370369] Saving new best policy, reward=-27.544!
+[2024-12-19 22:12:33,540][1370377] Updated weights for policy 0, policy_version 275 (0.0003)
+[2024-12-19 22:12:34,356][1370265] Heartbeat connected on Batcher_0
+[2024-12-19 22:12:34,358][1370265] Heartbeat connected on LearnerWorker_p0
+[2024-12-19 22:12:34,362][1370265] Heartbeat connected on InferenceWorker_p0-w0
+[2024-12-19 22:12:34,366][1370265] Heartbeat connected on RolloutWorker_w0
+[2024-12-19 22:12:34,367][1370265] Heartbeat connected on RolloutWorker_w1
+[2024-12-19 22:12:35,027][1370377] Updated weights for policy 0, policy_version 285 (0.0002)
+[2024-12-19 22:12:36,525][1370377] Updated weights for policy 0, policy_version 295 (0.0002)
+[2024-12-19 22:12:37,345][1370265] Fps is (10 sec: 6758.4, 60 sec: 3788.8, 300 sec: 3788.8). Total num frames: 306176. Throughput: 0: 2880.2. Samples: 57604. Policy #0 lag: (min: 0.0, avg: 0.3, max: 2.0)
+[2024-12-19 22:12:37,345][1370265] Avg episode reward: [(0, '-32.554')]
+[2024-12-19 22:12:38,008][1370377] Updated weights for policy 0, policy_version 305 (0.0003)
+[2024-12-19 22:12:39,504][1370377] Updated weights for policy 0, policy_version 315 (0.0002)
+[2024-12-19 22:12:41,003][1370377] Updated weights for policy 0, policy_version 325 (0.0002)
+[2024-12-19 22:12:42,345][1370265] Fps is (10 sec: 6758.4, 60 sec: 4423.7, 300 sec: 4423.7). Total num frames: 340992. Throughput: 0: 3956.0. Samples: 98900. Policy #0 lag: (min: 0.0, avg: 0.4, max: 2.0)
+[2024-12-19 22:12:42,345][1370265] Avg episode reward: [(0, '-33.695')]
+[2024-12-19 22:12:42,547][1370377] Updated weights for policy 0, policy_version 335 (0.0003)
+[2024-12-19 22:12:44,143][1370377] Updated weights for policy 0, policy_version 345 (0.0003)
+[2024-12-19 22:12:45,877][1370377] Updated weights for policy 0, policy_version 355 (0.0002)
+[2024-12-19 22:12:47,344][1370265] Fps is (10 sec: 6553.6, 60 sec: 4710.4, 300 sec: 4710.4). Total num frames: 371712. Throughput: 0: 4568.3. Samples: 137048. Policy #0 lag: (min: 0.0, avg: 0.4, max: 2.0)
+[2024-12-19 22:12:47,345][1370265] Avg episode reward: [(0, '-35.025')]
+[2024-12-19 22:12:47,548][1370377] Updated weights for policy 0, policy_version 365 (0.0002)
+[2024-12-19 22:12:49,210][1370377] Updated weights for policy 0, policy_version 375 (0.0002)
+[2024-12-19 22:12:50,884][1370377] Updated weights for policy 0, policy_version 385 (0.0002)
+[2024-12-19 22:12:52,344][1370265] Fps is (10 sec: 6246.5, 60 sec: 4944.5, 300 sec: 4944.5). Total num frames: 403456. Throughput: 0: 4444.2. Samples: 155548. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 22:12:52,345][1370265] Avg episode reward: [(0, '-36.987')]
+[2024-12-19 22:12:52,545][1370377] Updated weights for policy 0, policy_version 395 (0.0002)
+[2024-12-19 22:12:54,234][1370377] Updated weights for policy 0, policy_version 405 (0.0003)
+[2024-12-19 22:12:55,896][1370377] Updated weights for policy 0, policy_version 415 (0.0003)
+[2024-12-19 22:12:57,345][1370265] Fps is (10 sec: 6246.4, 60 sec: 5094.4, 300 sec: 5094.4). Total num frames: 434176. Throughput: 0: 4809.2. Samples: 192368. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 22:12:57,345][1370265] Avg episode reward: [(0, '-37.373')]
+[2024-12-19 22:12:57,567][1370377] Updated weights for policy 0, policy_version 425 (0.0003)
+[2024-12-19 22:12:59,237][1370377] Updated weights for policy 0, policy_version 435 (0.0003)
+[2024-12-19 22:13:00,891][1370377] Updated weights for policy 0, policy_version 445 (0.0002)
+[2024-12-19 22:13:02,344][1370265] Fps is (10 sec: 6144.0, 60 sec: 5211.0, 300 sec: 5211.0). Total num frames: 464896. Throughput: 0: 5095.6. Samples: 229304. Policy #0 lag: (min: 0.0, avg: 0.9, max: 2.0)
+[2024-12-19 22:13:02,345][1370265] Avg episode reward: [(0, '-36.239')]
+[2024-12-19 22:13:02,639][1370377] Updated weights for policy 0, policy_version 455 (0.0002)
+[2024-12-19 22:13:04,302][1370377] Updated weights for policy 0, policy_version 465 (0.0003)
+[2024-12-19 22:13:05,950][1370377] Updated weights for policy 0, policy_version 475 (0.0002)
+[2024-12-19 22:13:07,345][1370265] Fps is (10 sec: 6144.0, 60 sec: 5304.3, 300 sec: 5304.3). Total num frames: 495616. Throughput: 0: 5503.3. Samples: 247648. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2024-12-19 22:13:07,345][1370265] Avg episode reward: [(0, '-36.066')]
+[2024-12-19 22:13:07,570][1370377] Updated weights for policy 0, policy_version 485 (0.0002)
+[2024-12-19 22:13:09,213][1370377] Updated weights for policy 0, policy_version 495 (0.0002)
+[2024-12-19 22:13:10,842][1370377] Updated weights for policy 0, policy_version 505 (0.0002)
+[2024-12-19 22:13:12,344][1370265] Fps is (10 sec: 6144.0, 60 sec: 5380.7, 300 sec: 5380.7). Total num frames: 526336. Throughput: 0: 6331.1. Samples: 284956. Policy #0 lag: (min: 0.0, avg: 0.8, max: 2.0)
+[2024-12-19 22:13:12,345][1370265] Avg episode reward: [(0, '-35.056')]
+[2024-12-19 22:13:12,521][1370377] Updated weights for policy 0, policy_version 515 (0.0002)
+[2024-12-19 22:13:14,200][1370377] Updated weights for policy 0, policy_version 525 (0.0003)
+[2024-12-19 22:13:15,836][1370377] Updated weights for policy 0, policy_version 535 (0.0003)
+[2024-12-19 22:13:17,344][1370265] Fps is (10 sec: 6041.6, 60 sec: 5427.2, 300 sec: 5427.2). Total num frames: 556032. Throughput: 0: 6326.2. Samples: 321608. Policy #0 lag: (min: 0.0, avg: 0.5, max: 2.0)
+[2024-12-19 22:13:17,345][1370265] Avg episode reward: [(0, '-34.286')]
+[2024-12-19 22:13:17,484][1370377] Updated weights for policy 0, policy_version 545 (0.0002)
+[2024-12-19 22:13:19,200][1370377] Updated weights for policy 0, policy_version 555 (0.0003)
+[2024-12-19 22:13:20,888][1370377] Updated weights for policy 0, policy_version 565 (0.0002)
+[2024-12-19 22:13:22,345][1370265] Fps is (10 sec: 6041.6, 60 sec: 5939.2, 300 sec: 5482.3). Total num frames: 586752. Throughput: 0: 6269.1. Samples: 339712. Policy #0 lag: (min: 0.0, avg: 0.4, max: 2.0)
+[2024-12-19 22:13:22,345][1370265] Avg episode reward: [(0, '-32.777')]
+[2024-12-19 22:13:22,544][1370377] Updated weights for policy 0, policy_version 575 (0.0002)
+[2024-12-19 22:13:24,178][1370377] Updated weights for policy 0, policy_version 585 (0.0002)
+[2024-12-19 22:13:25,842][1370377] Updated weights for policy 0, policy_version 595 (0.0003)
+[2024-12-19 22:13:27,345][1370265] Fps is (10 sec: 6144.0, 60 sec: 6314.7, 300 sec: 5529.6). Total num frames: 617472. Throughput: 0: 6170.0. Samples: 376548. Policy #0 lag: (min: 0.0, avg: 0.9, max: 2.0)
+[2024-12-19 22:13:27,345][1370265] Avg episode reward: [(0, '-31.877')]
+[2024-12-19 22:13:27,482][1370377] Updated weights for policy 0, policy_version 605 (0.0002)
+[2024-12-19 22:13:29,141][1370377] Updated weights for policy 0, policy_version 615 (0.0002)
+[2024-12-19 22:13:30,806][1370377] Updated weights for policy 0, policy_version 625 (0.0002)
+[2024-12-19 22:13:32,344][1370265] Fps is (10 sec: 6144.1, 60 sec: 6246.4, 300 sec: 5570.6). Total num frames: 648192. Throughput: 0: 6146.8. Samples: 413656. Policy #0 lag: (min: 0.0, avg: 0.1, max: 2.0)
+[2024-12-19 22:13:32,345][1370265] Avg episode reward: [(0, '-30.171')]
+[2024-12-19 22:13:32,497][1370377] Updated weights for policy 0, policy_version 635 (0.0003)
+[2024-12-19 22:13:34,209][1370377] Updated weights for policy 0, policy_version 645 (0.0003)
+[2024-12-19 22:13:35,900][1370377] Updated weights for policy 0, policy_version 655 (0.0002)
+[2024-12-19 22:13:37,344][1370265] Fps is (10 sec: 6144.0, 60 sec: 6212.3, 300 sec: 5606.4). Total num frames: 678912. Throughput: 0: 6135.1. Samples: 431628. Policy #0 lag: (min: 0.0, avg: 1.0, max: 3.0)
+[2024-12-19 22:13:37,345][1370265] Avg episode reward: [(0, '-28.308')]
+[2024-12-19 22:13:37,580][1370377] Updated weights for policy 0, policy_version 665 (0.0002)
+[2024-12-19 22:13:39,231][1370377] Updated weights for policy 0, policy_version 675 (0.0002)
+[2024-12-19 22:13:40,898][1370377] Updated weights for policy 0, policy_version 685 (0.0002)
+[2024-12-19 22:13:42,345][1370265] Fps is (10 sec: 6144.0, 60 sec: 6144.0, 300 sec: 5638.0). Total num frames: 709632. Throughput: 0: 6136.1. Samples: 468492. Policy #0 lag: (min: 0.0, avg: 0.3, max: 2.0)
+[2024-12-19 22:13:42,345][1370265] Avg episode reward: [(0, '-28.247')]
+[2024-12-19 22:13:42,590][1370377] Updated weights for policy 0, policy_version 695 (0.0002)
+[2024-12-19 22:13:44,265][1370377] Updated weights for policy 0, policy_version 705 (0.0002)
+[2024-12-19 22:13:45,932][1370377] Updated weights for policy 0, policy_version 715 (0.0002)
+[2024-12-19 22:13:47,345][1370265] Fps is (10 sec: 6143.9, 60 sec: 6144.0, 300 sec: 5666.1). Total num frames: 740352. Throughput: 0: 6136.8. Samples: 505460. Policy #0 lag: (min: 0.0, avg: 0.5, max: 2.0)
+[2024-12-19 22:13:47,345][1370265] Avg episode reward: [(0, '-28.486')]
+[2024-12-19 22:13:47,582][1370377] Updated weights for policy 0, policy_version 725 (0.0002)
+[2024-12-19 22:13:49,254][1370377] Updated weights for policy 0, policy_version 735 (0.0003)
+[2024-12-19 22:13:50,920][1370377] Updated weights for policy 0, policy_version 745 (0.0003)
+[2024-12-19 22:13:52,344][1370265] Fps is (10 sec: 6144.0, 60 sec: 6126.9, 300 sec: 5691.3). Total num frames: 771072. Throughput: 0: 6141.8. Samples: 524028. Policy #0 lag: (min: 0.0, avg: 0.7, max: 2.0)
+[2024-12-19 22:13:52,345][1370265] Avg episode reward: [(0, '-28.834')]
+[2024-12-19 22:13:52,647][1370377] Updated weights for policy 0, policy_version 755 (0.0002)
+[2024-12-19 22:13:54,323][1370377] Updated weights for policy 0, policy_version 765 (0.0002)
+[2024-12-19 22:13:55,981][1370377] Updated weights for policy 0, policy_version 775 (0.0002)
+[2024-12-19 22:13:57,345][1370265] Fps is (10 sec: 6041.6, 60 sec: 6109.9, 300 sec: 5703.7). Total num frames: 800768. Throughput: 0: 6126.8. Samples: 560664. Policy #0 lag: (min: 0.0, avg: 0.3, max: 2.0)
+[2024-12-19 22:13:57,345][1370265] Avg episode reward: [(0, '-29.825')]
+[2024-12-19 22:13:57,689][1370377] Updated weights for policy 0, policy_version 785 (0.0002)
+[2024-12-19 22:13:59,343][1370377] Updated weights for policy 0, policy_version 795 (0.0002)
+[2024-12-19 22:14:01,020][1370377] Updated weights for policy 0, policy_version 805 (0.0002)
+[2024-12-19 22:14:02,344][1370265] Fps is (10 sec: 6041.6, 60 sec: 6109.9, 300 sec: 5724.7). Total num frames: 831488. Throughput: 0: 6129.3. Samples: 597428. Policy #0 lag: (min: 0.0, avg: 0.2, max: 2.0)
+[2024-12-19 22:14:02,346][1370265] Avg episode reward: [(0, '-30.621')]
+[2024-12-19 22:14:02,684][1370377] Updated weights for policy 0, policy_version 815 (0.0003)
+[2024-12-19 22:14:04,361][1370377] Updated weights for policy 0, policy_version 825 (0.0003)
+[2024-12-19 22:14:04,433][1370265] Keyboard interrupt detected in the event loop EvtLoop [Runner_EvtLoop, process=main process 1370265], exiting...
+[2024-12-19 22:14:04,433][1370265] Runner profile tree view:
+main_loop: 110.0676
+[2024-12-19 22:14:04,433][1370265] Collected {0: 845824}, FPS: 5591.3
+[2024-12-19 22:14:04,433][1370369] Stopping Batcher_0...
+[2024-12-19 22:14:04,433][1370369] Loop batcher_evt_loop terminating...
+[2024-12-19 22:14:04,434][1370376] Stopping RolloutWorker_w0...
+[2024-12-19 22:14:04,434][1370376] Loop rollout_proc0_evt_loop terminating...
+[2024-12-19 22:14:04,434][1370369] Saving ./train_dir/paper_quads_multi_mix_baseline_8a_attn_v116/single_/01_single_see_1111/checkpoint_p0/checkpoint_000000826_845824.pth...
+[2024-12-19 22:14:04,435][1370378] Stopping RolloutWorker_w1...
+[2024-12-19 22:14:04,436][1370378] Loop rollout_proc1_evt_loop terminating...
+[2024-12-19 22:14:04,441][1370369] Stopping LearnerWorker_p0...
+[2024-12-19 22:14:04,441][1370369] Loop learner_proc0_evt_loop terminating...
+[2024-12-19 22:14:04,446][1370377] Weights refcount: 2 0
+[2024-12-19 22:14:04,447][1370377] Stopping InferenceWorker_p0-w0...
+[2024-12-19 22:14:04,447][1370377] Loop inference_proc0-0_evt_loop terminating...
