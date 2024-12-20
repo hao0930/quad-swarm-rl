@@ -11,7 +11,7 @@ _params = ParamGrid(
 OBSTACLE_MODEL_CLI = QUAD_BASELINE_CLI_8 + (
     ' --num_workers=36 --num_envs_per_worker=4 '
     '--quads_neighbor_visible_num=2 --quads_neighbor_obs_type=pos_vel --quads_encoder_type=attention '
-    '--with_wandb=True --wandb_project=Quad-Swarm-RL --wandb_user=multi-drones '
+    '--with_wandb=False --wandb_project=Quad-Swarm-RL --wandb_user=multi-drones '
     '--wandb_group=final'
 )
 
